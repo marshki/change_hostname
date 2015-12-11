@@ -1,5 +1,5 @@
 #!/bin/bash
-#Changes hostname. 
+#Changes hostname in Ubuntu. 
 #Must be run as root. 
 
 #Assign existing hostname to $hostn

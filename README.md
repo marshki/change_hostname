@@ -1,6 +1,6 @@
 # Change hostname in Buntu 
 
-You may, for any number of reasons, need to change your rig's hostname. This Bash script allows you to do so interactively. Tested to work in Ubuntu, and probably works in most Debian-based Linux OSs. 
+You may, for any number of reasons, need to change your rig's hostname. This Bash script allows you to do so interactively. Tested to work in Ubuntu, and should work in other Debian-based Linux OSs. 
 
 ## Usage 
 
