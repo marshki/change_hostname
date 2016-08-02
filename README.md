@@ -8,7 +8,7 @@ You may, for any number of reasons, need to change your rig's hostname. This Bas
 
 ## History 
 
-Firs commit Dec. 13, 2015 @4:00 PM EDT. 
+First commit Dec. 13, 2015 @4:00 PM EDT. 
 
 ## License 
 
