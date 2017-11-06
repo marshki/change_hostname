@@ -4,7 +4,10 @@ You may, for any number of reasons, need to change your rig's hostname. This Bas
 
 ## Usage 
 
-**Proceed with caution. Please be sure that you understand what this code does. I assume zero liability if your rig goes to pot. Must run as root.** 
+
+As ROOT, call the script with: `bash change.hostname.sh` then follow on screen prompt. 
+
+**Proceed with caution. Please be sure that you understand what this code does.**
 
 ## History 
 
@@ -12,4 +15,4 @@ First commit Dec. 13, 2015 @4:00 PM EDT.
 
 ## License 
 
-MIT License. 'Nuff said. 
+[MIT License](https://opensource.org/licenses/MIT). 'Nuff said. 
