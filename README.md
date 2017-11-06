@@ -1,9 +1,8 @@
-# Change hostname in Ubuntu 
+# Change Hostname in Ubuntu 
 
-You may, for any number of reasons, need to change your rig's hostname. This Bash script allows you to do so interactively. Tested to work in Ubuntu, and should work in other Debian-based Linux OSs. 
+This Bash script allows you to interactively change the hostname of a machine running Ubuntu. Should also work in other Debian-based Linux operating systems.  
 
 ## Usage 
-
 
 As ROOT, call the script with: `bash change.hostname.sh` then follow on screen prompt. 
 
