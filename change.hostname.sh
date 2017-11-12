@@ -1,9 +1,18 @@
 #!/bin/bash
 #Changes hostname in Ubuntu. 
-#Must be run as root. 
+
+# Assign 0 to root_uid
+root_uid=0
 
 #Assign existing hostname to $hostn
 currenthost=$(cat /etc/hostname)
+
+#Exit if not ROOT. 
+
+if [ "$UID" -ne "$root_uid" ]; then 
+    printf "%s\n" "ROOT privileges are required to continue. Exiting.">&2
+    exit 1
+fi 
 
 #Display existing hostname
 printf "%s\n" "Existing hostname is $currenthost"
