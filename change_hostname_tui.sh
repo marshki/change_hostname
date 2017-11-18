@@ -15,7 +15,7 @@ if [ "$UID" -ne "$root_uid" ]; then
 fi 
 
 # Display existing hostname 
-whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is $currenthost." 10 40
+whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is: $currenthost." 10 40
 
 # Ask for new hostname 
 newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
@@ -28,14 +28,19 @@ else
     exit 1 
 fi
 
-# change hostname in /etc/hosts 
+# Change hostname in /etc/hosts 
 sed -i "s/$currenthost/$newhost/g" /etc/hosts
 
-# change hostname in /etc/hostname 
+# Change hostname in /etc/hostname 
 sed -i "s/$currenthost/$newhost/g" /etc/hostname 
 
 # Display new hostname 
 whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is $newhost" 10 40 
 
-# Press a key to reboot 
-reboot
+# Reboot now or later? 
+if (whiptail ==backtitle "$script" --title "$program" --yesno "A reboot is required for changes to take effect. Reboot now?" 10 40) ; then 
+    reboot
+else 
+    exit 1
+
+exit 0 
