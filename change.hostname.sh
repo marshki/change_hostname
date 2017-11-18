@@ -1,5 +1,5 @@
 #!/bin/bash
-#Changes hostname in Ubuntu. 
+#Change hostname in Ubuntu. 
 
 # Assign 0 to root_uid
 root_uid=0
@@ -8,7 +8,6 @@ root_uid=0
 currenthost=$(cat /etc/hostname)
 
 #Exit if not ROOT. 
-
 if [ "$UID" -ne "$root_uid" ]; then 
     printf "%s\n" "ROOT privileges are required to continue. Exiting.">&2
     exit 1
