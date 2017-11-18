@@ -1,9 +1,10 @@
 #!/bin/bash
-# Changes hostname in Ubuntu.  
+# Bash script to change hostname in Ubuntu 
+# Text-based user interface (TUI)
 
-# Assign Variables 
+# Variables 
 script=`basename "$0"`              # Assign name of script
-program="Change Hostname"    	    # Assign title 
+program="Change Hostname"    	    # Assign title of program  
 root_uid=0                          # Assign 0 to root_uid 
 currenthost=$(cat /etc/hostname)    # Assign existing hostname 
 
@@ -21,18 +22,20 @@ newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter ne
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    printf "%s\n" "$newhost
+    printf "%s\n" "$newhost" 
 else
     printf "s%\n" "Canceling..."
+    exit 1 
 fi
 
 # change hostname in /etc/hosts 
-sed 
+sed -i "s/$currenthost/$newhost/g" /etc/hosts
 
 # change hostname in /etc/hostname 
-
-
+sed -i "s/$currenthost/$newhost/g" /etc/hostname 
 
 # Display new hostname 
+whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is $newhost" 10 40 
 
 # Press a key to reboot 
+reboot
