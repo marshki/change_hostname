@@ -21,9 +21,9 @@ newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter ne
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
-    printf "$s\n" $newhost
+    printf "%s\n" $newhost
 else
-    printf "$s\n" "Canceling..."
+    printf "s%\n" "Canceling..."
 fi
 
 #change hostname in /etc/hosts & /etc/hostname 
