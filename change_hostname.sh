@@ -1,5 +1,6 @@
 #!/bin/bash
 #Change hostname in Ubuntu. 
+#Command line interface only.  
 
 # Assign 0 to root_uid
 root_uid=0
