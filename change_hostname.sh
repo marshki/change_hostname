@@ -1,6 +1,11 @@
 #!/bin/bash
-#Change hostname in Ubuntu. 
-#Command line interface only.  
+# mjk 2017.11.18
+
+############################################
+### Change hostname in Ubuntu,           ###
+### and probably other Debian-based OSs. ###
+### Command-line interface.              ###
+############################################
 
 # Assign 0 to root_uid
 root_uid=0

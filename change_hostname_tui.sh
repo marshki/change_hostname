@@ -1,16 +1,21 @@
 #!/bin/bash
-# Bash script to change hostname in Ubuntu 
-# Text-based user interface (TUI)
+# mjk 2017.11.18
+
+############################################
+### Change hostname in Ubuntu,           ###
+### and probably other Debian-based OSs. ###
+### Text-based user interface (TUI)      ###
+############################################
 
 # Variables 
 script=`basename "$0"`              # Assign name of script
 program="Change Hostname"    	    # Assign title of program  
-root_uid=0                          # Assign 0 to root_uid 
+root_uid=0                          # Assign 0 to root user ID
 currenthost=$(cat /etc/hostname)    # Assign existing hostname 
 
 # Exit if not root
 if [ "$UID" -ne "$root_uid" ]; then 
-    whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting." 10 40
+    whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi 
 
@@ -24,7 +29,7 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     printf "%s\n" "$newhost" 
 else
-    printf "s%\n" "Canceling..."
+    printf "%s\n" "Canceling..."
     exit 1 
 fi
 
