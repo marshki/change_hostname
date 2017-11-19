@@ -4,15 +4,17 @@ Bash script allows you to interactively change the hostname of a machine running
 and probably other Debian-based OSs. 
 
 `change_hostname.sh` &rarr; command-line interface
+
 `change_hostname_tui.sh` &rarr; text-based user interface
 
 ## Usage 
 
-As ROOT, call the script with: `bash change.hostname.sh` then follow on screen prompts. 
+As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostname_tui.sh`, then follow on screen prompts. 
 
 ## History 
 
-First commit Dec. 13, 2015 @4:00 PM EDT. 
+First commit 2015.12.13. 
+Last commit 2017.11.18.  
 
 ## License 
 
