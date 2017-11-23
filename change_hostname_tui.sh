@@ -5,6 +5,7 @@
 ### Change hostname in Ubuntu,           ###
 ### and probably other Debian-based OSs. ###
 ### Text-based user interface (TUI)      ###
+### via Whiptail.                        ###
 ############################################
 
 # Variables 
