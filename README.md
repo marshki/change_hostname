@@ -23,7 +23,6 @@ First commit 2015.12.13.
 Last commit 2017.11.18.  
 =======
 Last commit 2017.11.18 (won't be adding to this script).
->>>>>>> 1ace9952a33b2967cf7a03800558491531d67a25
 
 ## License 
 
