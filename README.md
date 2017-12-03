@@ -13,7 +13,7 @@ and probably other Debian-based OSs.
 
 As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostname_tui.sh`, then follow on screen prompts, e.g.: 
 
-![alt text](https://github.com/marshki/change_hostname_ubuntu/blob/master/change_hostname_tui.png)
+![alt text](https://github.com/marshki/change_hostname_ubuntu/blob/master/docs/change_hostname_tui.png)
 
 ## History 
 
