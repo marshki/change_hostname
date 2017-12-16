@@ -22,4 +22,4 @@ First commit 2015.12.13.
 Last commit 2017.11.18 (won't be adding to this script).
 
 ## License 
-[LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE) 'Nuff said. 
+[LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE). 
