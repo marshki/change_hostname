@@ -11,11 +11,10 @@
 # Variables 
 script=`basename "$0"`              # Assign name of script
 program="Change Hostname"    	    # Assign title of program  
-root_uid=0                          # Assign 0 to root user ID
 currenthost=$(cat /etc/hostname)    # Assign existing hostname 
 
 # Exit if not root
-if [ "$UID" -ne "$root_uid" ]; then 
+if [ "$EUID" -ne "0" ]; then 
     whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi 
