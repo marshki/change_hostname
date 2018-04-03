@@ -7,14 +7,11 @@
 ### Command-line interface.              ###
 ############################################
 
-# Assign 0 to root_uid
-root_uid=0
-
 #Assign existing hostname to $hostn
 currenthost=$(cat /etc/hostname)
 
 #Exit if not ROOT. 
-if [ "$UID" -ne "$root_uid" ]; then 
+if [ "$EUID" -ne "0" ]; then 
     printf "%s\n" "ROOT privileges are required to continue. Exiting.">&2
     exit 1
 fi 
