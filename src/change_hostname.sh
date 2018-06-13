@@ -4,32 +4,64 @@
 ############################################
 ### Change hostname in Ubuntu,           ###
 ### and probably other Debian-based OSs. ###
-### Command-line interface.              ###
 ############################################
 
 #Assign existing hostname to $hostn
+
 currenthost=$(cat /etc/hostname)
 
 #Exit if not ROOT. 
-if [ "$EUID" -ne "0" ]; then 
+
+root_user_check () {
+  if [ "$EUID" -ne "0" ]; then 
     printf "%s\n" "ROOT privileges are required to continue. Exiting.">&2
     exit 1
 fi 
+}
 
 #Display existing hostname
-printf "%s\n" "Existing hostname is $currenthost"
+
+show_current_hostname () {
+  printf "%s\n" "Existing hostname is $currenthost"
+}
 
 #Ask for new hostname $newhost
-printf "%s\n" "Enter new hostname: "
-read newhost
+
+get_new_hostname () { 
+  printf "%s\n" "Enter new hostname: "
+  read newhost
+} 
 
 #Change hostname in /etc/hosts & /etc/hostname
-sed -i "s/$currenthost/$newhost/g" /etc/hosts
-sed -i "s/$currenthost/$newhost/g" /etc/hostname
+
+change_hostname () { 
+  sed --in-place "s/$currenthost/$newhost/g" /etc/hosts
+  sed --in-place "s/$currenthost/$newhost/g" /etc/hostname
+} 
 
 #Display new hostname
-printf "%s\n" "Your new hostname is $newhost"
+
+show_new_hostname () { 
+  printf "%s\n" "Your new hostname is $newhost"
+} 
 
 #Press a key to reboot
-read -s -n 1 -p "Press any key to reboot"
-reboot
+
+rebooty () { 
+  read -s -n 1 -p "Press any key to reboot"
+  reboot  
+}  
+
+# Main 
+
+root_user_check
+
+main () { 
+  show_current_hostname 
+  get_new_hostname 
+  change_hostname
+  show_new_hostname 
+  rebooty     
+} 
+
+main "$@"
