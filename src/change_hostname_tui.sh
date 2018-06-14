@@ -19,39 +19,71 @@ currenthost=$(cat /etc/hostname)
 
 # Exit if not root
 
-if [ "$EUID" -ne "0" ]; then 
-    whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
+root_user_check () {
+  if [ "$EUID" -ne "0" ]; then 
+  whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi 
+} 
 
 # Display existing hostname 
 
-whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is: $currenthost." 10 40
+show_current_hostname () { 
+  whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is: $currenthost." 10 40
+} 
 
-# Ask for new hostname 
-newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
+# Ask for new hostname $newhost 
 
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
+get_new_hostname () { 
+  newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
+  
+  exitstatus=$?
+
+  if [ $exitstatus = 0 ]; then
     printf "%s\n" "$newhost" 
-else
+  else
     printf "%s\n" "Canceling..."
     exit 1 
 fi
+} 
 
-# Change hostname in /etc/hosts 
-sed -i "s/$currenthost/$newhost/g" /etc/hosts
+# Change hostname in /etc/hosts & /etc/hostname
 
-# Change hostname in /etc/hostname 
-sed -i "s/$currenthost/$newhost/g" /etc/hostname 
+change_hostname () { 
+  sed --in-place "s/$currenthost/$newhost/g" /etc/hosts
+  sed --in-place "s/$currenthost/$newhost/g" /etc/hostname 
+} 
 
 # Display new hostname 
-whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is $newhost" 10 40 
+
+show_new_hostname () {
+  whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is $newhost" 10 40 
+} 
 
 # Reboot now or later? 
-if (whiptail ==backtitle "$script" --title "$program" --yesno "A reboot is required for changes to take effect. Reboot now?" 10 40) ; then 
+
+rebooty () { 
+  if (whiptail --backtitle "$script" --title "$program" --yesno "A reboot is required for changes to take effect. Reboot now?" 10 40) ; then 
     reboot
-else 
+  else 
     exit 1
+fi
 
 exit 0 
+} 
+
+# Main 
+
+root_user_check 
+
+main () { 
+  show_current_hostname
+  get_new_hostname
+  change_hostname 
+  show_new_hostname
+  rebooty 
+}
+
+main "$@" 
+
+#exit 0 
