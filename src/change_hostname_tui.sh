@@ -1,6 +1,3 @@
-#!/bin/bash
-# mjk 2017.11.18
-
 ############################################
 ### Change hostname in Ubuntu,           ###
 ### and probably other Debian-based OSs. ###
@@ -26,16 +23,6 @@ root_user_check () {
 fi 
 } 
 
-# Is whiptail installed? If not, let's install it. 
-
-whiptail_check () {
-  if [ $(dpkg-query --show --showformat='${Status}' whiptail 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
-    whiptail --backtitle "$script" --title "$program" --msgbox "WHIPTAIL is not installed. Should we install it?" >&2 10 40
-    apt-get install wget --yes
-fi
-}
-
-
 # Display existing hostname 
 
 show_current_hostname () { 
@@ -59,7 +46,9 @@ fi
 
 # Change hostname in /etc/hosts & /etc/hostname
 
-change_hostname () { 
+change_hostname () {
+  whiptail --backtitle "$script" --title "$program" --msgbox "Changing hostname" 10 40 
+  
   sed --in-place "s/$currenthost/$newhost/g" /etc/hosts
   sed --in-place "s/$currenthost/$newhost/g" /etc/hostname 
 } 
@@ -85,7 +74,6 @@ exit 0
 # Main 
 
 root_user_check 
-whiptail_check 
 
 main () { 
   show_current_hostname
@@ -96,5 +84,3 @@ main () {
 }
 
 main "$@" 
-
-#exit 0 
