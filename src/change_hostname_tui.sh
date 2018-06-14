@@ -8,18 +8,24 @@
 ### via Whiptail.                        ###
 ############################################
 
-# Variables 
-script=`basename "$0"`              # Assign name of script
-program="Change Hostname"    	    # Assign title of program  
-currenthost=$(cat /etc/hostname)    # Assign existing hostname 
+# Assign script name, program name
+ 
+script=`basename "$0"`              
+program="Change Hostname"    	        
+  
+# Assign exisitng hostname 
+
+currenthost=$(cat /etc/hostname)
 
 # Exit if not root
+
 if [ "$EUID" -ne "0" ]; then 
     whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi 
 
 # Display existing hostname 
+
 whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is: $currenthost." 10 40
 
 # Ask for new hostname 
