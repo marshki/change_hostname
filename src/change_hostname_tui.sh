@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ############################################
 ### Change hostname in Ubuntu,           ###
 ### and probably other Debian-based OSs. ###
