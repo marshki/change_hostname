@@ -9,7 +9,7 @@
 
 # Assign script name, program name
  
-script=`basename "$0"`              
+script=$(basename "$0")              
 program="Change Hostname"    	        
   
 # Assign exisitng hostname 
