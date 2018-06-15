@@ -10,6 +10,11 @@ and probably other Debian-based OSs.
 
 `change_hostname_tui.sh` &rarr; text-based user interface via Whiptail. 
 
+## Requirements
+
+`change_hostname_tui.sh` requires [Whiptail](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail). 
+You may install the package with: `sudo apt-get install --yes whiptail` through the Apt package manager. 
+
 ## Usage 
 
 As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostname_tui.sh`, then follow on screen prompts, e.g.: 
