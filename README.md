@@ -13,7 +13,7 @@ and probably other Debian-based OSs.
 ## Requirements
 
 `change_hostname_tui.sh` requires [Whiptail](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail). 
-You may install the package with: `sudo apt-get install --yes whiptail` through the Apt package manager. 
+You may install the package via Apt with: `sudo apt-get install --yes whiptail`. 
 
 ## Usage 
 
