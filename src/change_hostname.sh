@@ -29,7 +29,7 @@ show_current_hostname () {
 
 get_new_hostname () { 
   printf "%s\n" "Enter new hostname: "
-  read newhost
+  read -r newhost
 } 
 
 #Change hostname in /etc/hosts & /etc/hostname
@@ -48,7 +48,7 @@ show_new_hostname () {
 #Press a key to reboot
 
 rebooty () { 
-  read -s -n 1 -p "Press any key to reboot"
+  read -s -n 1 -rp "Press any key to reboot"
   reboot  
 }  
 
