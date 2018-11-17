@@ -1,6 +1,7 @@
 # Change Hostname in Ubuntu 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/606d03a4dcaf493ebf21a30245c87d83)](https://www.codacy.com/app/marshki/change_hostname_ubuntu?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshki/change_hostname_ubuntu&amp;utm_campaign=Badge_Grade)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love png3](https://badges.frapsoft.com/os/v3/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script allows you to interactively change the hostname of a machine running Ubuntu,
