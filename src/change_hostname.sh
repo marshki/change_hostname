@@ -1,16 +1,16 @@
 #!/bin/bash
 # mjk 2017.11.18
 
-############################################
-### Change hostname in Ubuntu,           ###
-### and probably other Debian-based OSs. ###
-############################################
+#=====================================
+# Change hostname in Ubuntu,           
+# and probably other Debian-based OSs.
+#=====================================
 
-#Assign existing hostname to $hostn
+# Assign existing hostname to $hostn
 
 currenthost=$(cat /etc/hostname)
 
-#Exit if not ROOT. 
+# Exit if not ROOT. 
 
 root_user_check () {
   if [ "$EUID" -ne "0" ]; then 
@@ -19,33 +19,33 @@ root_user_check () {
 fi 
 }
 
-#Display existing hostname
+# Display existing hostname
 
 show_current_hostname () {
   printf "%s\n" "Existing hostname is $currenthost"
 }
 
-#Ask for new hostname $newhost
+# Ask for new hostname $newhost
 
 get_new_hostname () { 
   printf "%s\n" "Enter new hostname: "
   read -r newhost
 } 
 
-#Change hostname in /etc/hosts & /etc/hostname
+# Change hostname in /etc/hosts & /etc/hostname
 
 change_hostname () { 
   sed --in-place "s/$currenthost/$newhost/g" /etc/hosts
   sed --in-place "s/$currenthost/$newhost/g" /etc/hostname
 } 
 
-#Display new hostname
+# Display new hostname
 
 show_new_hostname () { 
   printf "%s\n" "Your new hostname is $newhost"
 } 
 
-#Press a key to reboot
+# Press a key to reboot
 
 rebooty () { 
   read -s -n 1 -rp "Press any key to reboot"
