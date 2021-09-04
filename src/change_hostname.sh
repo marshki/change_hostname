@@ -1,10 +1,13 @@
-#!/bin/bash
-# mjk 2017.11.18
-
-#=====================================
-# Change hostname in Ubuntu,           
-# and probably other Debian-based OSs.
-#=====================================
+#!/usr/bin/env bash
+# 
+# change_hostname
+# 
+# Change hostname in Debian-based operating systems (OSs).
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 11-NOV-2017
+# License: MIT
+#
 
 # Assign existing hostname to $hostn
 
