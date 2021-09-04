@@ -1,11 +1,14 @@
-#!/bin/bash
-
-#=====================================
-# Change hostname in Ubuntu,           
-# and probably other Debian-based OSs. 
-# Text-based user interface (TUI)      
-# via Whiptail.                        
-#=====================================
+#!/usr/bin/env bash
+# 
+# change_hostname
+# 
+# Change hostname in Debian-based operating systems (OSs) 
+# via: "whiptail" text-based user interface (TUI).
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 11-NOV-2017
+# License: MIT
+#
 
 # Assign script name, program name
  
