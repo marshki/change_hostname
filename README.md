@@ -5,7 +5,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![Open Source Love png3](https://badges.frapsoft.com/os/v3/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-Bash script allows you to interactively change the hostname of a machine running Debian-based OSs. 
+Bash script allows you to interactively change the hostname of a machine running a Debian-based operating system (OS). 
 
 `change_hostname.sh` &rarr; command-line interface
 
