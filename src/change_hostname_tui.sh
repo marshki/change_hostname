@@ -22,7 +22,7 @@ currenthost=$(cat /etc/hostname)
 # Exit if not root
 
 root_user_check () {
-  if [ "$EUID" -ne "0" ]; then 
+  if [ "$EUID" != "0" ]; then 
   whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi 
