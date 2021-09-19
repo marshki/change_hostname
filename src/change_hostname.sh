@@ -16,7 +16,7 @@ currenthost=$(cat /etc/hostname)
 # Exit if not ROOT. 
 
 root_user_check () {
-  if [ "$EUID" -ne "0" ]; then 
+  if [ "$EUID" != "0" ]; then 
     printf "%s\n" "ROOT privileges are required to continue. Exiting.">&2
     exit 1
 fi 
