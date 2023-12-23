@@ -28,3 +28,10 @@ v.0.1 12-DEC-2015
 
 ## License 
 [LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE). 
+
+## TODOs
+
+macOS has three (3) hostname variables that are normally set to its DNS name.
+To set them from the command line, use scutil, e.g.:
+
+`MHOST="myhost" ; scutil --set ComputerName $MHOST ; scutil --set HostName $MHOST ; scutil --set LocalHostName $MHOST ; unset MHOST`
