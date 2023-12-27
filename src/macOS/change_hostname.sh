@@ -9,9 +9,6 @@
 # License: MIT
 #
 
-# macOS has three (3) hostname variables that are normally set to its DNS name.
-# To set them from the command line, use 'scutil'.
-
 # Assign existing hostname to $hostn
 
 currenthost=$(scutil --get ComputerName)
@@ -40,9 +37,11 @@ get_new_hostname () {
 
 # Change hostname in /etc/hosts & /etc/hostname
 
-change_hostname () { 
-  sed --in-place "s/$currenthost/$newhost/g" /etc/hosts
-  sed --in-place "s/$currenthost/$newhost/g" /etc/hostname
+change_hostname () {
+  scutil --set ComputerName $newhost
+  scutil --set HostName $newhost
+  scutil --set LocalHostName $newhost
+  unset $newhost
 } 
 
 # Display new hostname
@@ -65,9 +64,9 @@ root_user_check
 main () { 
   show_current_hostname 
   get_new_hostname 
-  #change_hostname
-  #show_new_hostname 
-  #rebooty     
+  change_hostname
+  show_new_hostname 
+  rebooty     
 } 
 
 main "$@"
