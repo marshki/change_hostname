@@ -25,7 +25,7 @@ fi
 # Display existing hostname
 
 show_current_hostname () {
-  printf "%s\n" "Existing hostname is $currenthost"
+  printf "%s\n" "Existing hostname is: $currenthost"
 }
 
 # Ask for new hostname $newhost
@@ -45,7 +45,7 @@ change_hostname () {
 # Display new hostname
 
 show_new_hostname () { 
-  printf "%s\n" "Your new hostname is $newhost"
+  printf "%s\n" "Your new hostname is: $newhost"
 } 
 
 # Press a key to reboot
