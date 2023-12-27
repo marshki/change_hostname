@@ -5,7 +5,7 @@
 # Change hostname in macOS.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
-# Date: 12-DEC-2023
+# Date: 27-DEC-2023
 # License: MIT
 #
 
