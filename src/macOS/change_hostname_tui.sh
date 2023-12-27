@@ -6,7 +6,7 @@
 # via: "whiptail" text-based user interface (TUI).
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
-# Date: 11-NOV-2017
+# Date: 27-DEC-2023
 # License: MIT
 #
 
@@ -17,7 +17,7 @@ program="Change Hostname"
   
 # Assign exisitng hostname 
 
-currenthost=$(cat /etc/hostname)
+currenthost=$(scutil --get ComputerName)
 
 # Exit if not root
 
@@ -82,10 +82,10 @@ root_user_check
 
 main () { 
   show_current_hostname
-  get_new_hostname
-  change_hostname 
-  show_new_hostname
-  rebooty 
+  #get_new_hostname
+  #change_hostname 
+  #show_new_hostname
+  #rebooty 
 }
 
 main "$@"
