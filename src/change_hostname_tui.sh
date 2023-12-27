@@ -61,7 +61,7 @@ change_hostname () {
 # Display new hostname 
 
 show_new_hostname () {
-  whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is $newhost" 10 40 
+  whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is: $newhost" 10 40 
 } 
 
 # Reboot now or later? 
@@ -88,4 +88,4 @@ main () {
   rebooty 
 }
 
-main "$@" 
+main "$@"
