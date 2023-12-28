@@ -28,6 +28,7 @@ As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostnam
 ## History
 
 v.0.1 12-DEC-2015
+
 v.0.2 23-DEC-2023
 
 ## License
