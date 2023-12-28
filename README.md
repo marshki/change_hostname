@@ -5,33 +5,30 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![Open Source Love png3](https://badges.frapsoft.com/os/v3/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-Bash script allows you to interactively change the hostname of a machine running a Debian-based operating system (OS). 
+Bash script allows you to interactively change the hostname of a machine running Debian-based systems, or macOS.
 
 `change_hostname.sh` &rarr; command-line interface
 
-`change_hostname_tui.sh` &rarr; text-based user interface via Whiptail. 
+`change_hostname_tui.sh` &rarr; text-based user interface via Whiptail.
 
 ## Requirements
 
-`change_hostname_tui.sh` requires [Whiptail](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail). 
-You may install the package via Apt with: `sudo apt-get install --yes whiptail`. 
+`change_hostname_tui.sh` requires [Whiptail](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail).
+You may install the package via:
 
-## Usage 
+- apt with: `sudo apt-get install --yes whiptail`
+- brew with: `brew install newt`
 
-As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostname_tui.sh`, then follow on screen prompts, e.g.: 
+## Usage
+
+As ROOT, call the script with: `bash change_hostname.sh` or `bash change_hostname_tui.sh`, then follow on screen prompts, e.g.:
 
 ![alt text](https://github.com/marshki/change_hostname_ubuntu/blob/master/docs/change_hostname_tui.png)
 
 ## History
 
 v.0.1 12-DEC-2015
+v.0.2 23-DEC-2023
 
-## License 
-[LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE). 
-
-## TODOs
-
-macOS has three (3) hostname variables that are normally set to its DNS name.
-To set them from the command line, use scutil, e.g.:
-
-`MHOST="myhost" ; scutil --set ComputerName $MHOST ; scutil --set HostName $MHOST ; scutil --set LocalHostName $MHOST ; unset MHOST`
+## License
+[LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE).
