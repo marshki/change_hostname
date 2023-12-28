@@ -1,4 +1,4 @@
-# Change Hostname (Debian-based Operating Systems)
+# Change Hostname (Debian-based OSs, and macOS)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/606d03a4dcaf493ebf21a30245c87d83)](https://www.codacy.com/app/marshki/change_hostname_ubuntu?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshki/change_hostname_ubuntu&amp;utm_campaign=Badge_Grade)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
