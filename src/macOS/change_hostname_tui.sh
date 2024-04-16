@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# 
+#
 # change_hostname
-# 
+#
 # Change hostname in macOS
 # via: "whiptail" text-based user interface (TUI).
 #
@@ -11,10 +11,10 @@
 #
 
 # Assign script name, program name.
- 
+
 script=$(basename "$0")
 program="Change Hostname"
- 
+
 # Assign exisitng hostname to $currenthost.
 
 currenthost=$(scutil --get ComputerName)
@@ -38,7 +38,7 @@ show_current_hostname () {
 
 get_new_hostname () {
   newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
-  
+
   exitstatus=$?
 
   if [ $exitstatus = 0 ]; then
@@ -52,7 +52,7 @@ fi
 # Change hostname via 'scutil'.
 
 change_hostname () {
-  whiptail --backtitle "$script" --title "$program" --msgbox "Changing hostname" 10 40 
+  whiptail --backtitle "$script" --title "$program" --msgbox "Changing hostname" 10 40
 
   scutil --set ComputerName $newhost
   scutil --set HostName $newhost
@@ -85,9 +85,9 @@ root_user_check
 main () {
   show_current_hostname
   get_new_hostname
-  change_hostname 
+  change_hostname
   show_new_hostname
-  rebooty 
+  rebooty
 }
 
 main "$@"
