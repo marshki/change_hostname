@@ -65,7 +65,7 @@ main () {
   show_current_hostname
   get_new_hostname
   change_hostname
-  show_new_hostname 
+  show_new_hostname
   rebooty
 }
 
