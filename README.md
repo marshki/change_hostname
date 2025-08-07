@@ -33,3 +33,10 @@ v.0.2 23-DEC-2023
 
 ## License
 [LICENSE](https://github.com/marshki/change_hostname_ubuntu/blob/master/LICENSE).
+
+## TODO
+
+-- [ ] `hostnamectl` in .deb-based host
+
+-- [ ] .rpm -based hosts?
+
