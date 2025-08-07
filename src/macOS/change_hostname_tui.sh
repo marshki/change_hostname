@@ -20,19 +20,22 @@ currenthost=$(scutil --get ComputerName)
 # Exit if not root.
 root_user_check () {
   if [ "$EUID" != "0" ]; then
-  whiptail --backtitle "$script" --title "$program" --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
+  whiptail --backtitle "$script" --title "$program" \
+    --msgbox "ROOT privileges are required to continue. Exiting..." 10 40
     exit 1
 fi
 }
 
 # Display existing hostname.
 show_current_hostname () {
-  whiptail --backtitle "$script" --title "$program" --msgbox "The current hostname is: $currenthost." 10 40
+  whiptail --backtitle "$script" --title "$program" \
+    --msgbox "The current hostname is: $currenthost." 10 40
 }
 
 # Ask for new hostname $newhost.
 get_new_hostname () {
-  newhost=$(whiptail --backtitle "$script" --title "$program" --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
+  newhost=$(whiptail --backtitle "$script" --title "$program" \
+    --inputbox "Enter new hostname:" 10 40 3>&1 1>&2 2>&3)
 
   exitstatus=$?
 
@@ -46,7 +49,8 @@ fi
 
 # Change hostname via 'scutil'.
 change_hostname () {
-  whiptail --backtitle "$script" --title "$program" --msgbox "Changing hostname" 10 40
+  whiptail --backtitle "$script" --title "$program" \
+    --msgbox "Changing hostname" 10 40
 
   scutil --set ComputerName $newhost
   scutil --set HostName $newhost
@@ -56,12 +60,14 @@ change_hostname () {
 
 # Display new hostname.
 show_new_hostname () {
-  whiptail --backtitle "$script" --title "$program" --msgbox "Your new hostname is: $newhost" 10 40
+  whiptail --backtitle "$script" --title "$program" \
+    --msgbox "Your new hostname is: $newhost" 10 40
 }
 
 # Reboot now or later?
 rebooty () {
-  if (whiptail --backtitle "$script" --title "$program" --yesno "A reboot is required for changes to take effect. Reboot now?" 10 40) ; then
+  if (whiptail --backtitle "$script" --title "$program" \
+    --yesno "A reboot is required for changes to take effect. Reboot now?" 10 40) ; then
     reboot
   else
     exit 1
